@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background: rgb(255, 255, 255); /* Set the background color to black */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+
+/* SCROLL BAR THEME */
+*::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3d0083;
+  border-radius: 5px;
+}
