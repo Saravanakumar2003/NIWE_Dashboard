@@ -330,7 +330,7 @@ const NewComplaintForm = ({ currUser, myinfo, notify }) => {
 
                         <Grid item xs={12}>
                             <FormControl fullWidth>
-                                <InputLabel id="Apprived">Apprived By</InputLabel>
+                                <InputLabel id="Apprived">Approved By</InputLabel>
                                 <Select
                                     labelId="Apprived"
                                     id="Apprived"
@@ -339,6 +339,7 @@ const NewComplaintForm = ({ currUser, myinfo, notify }) => {
                                     label="Apprived"
                                     onChange={(e) => setComplaintInfo({ ...complaintInfo, Apprived: e.target.value })}
                                 >
+                                    <MenuItem value={"Dr.K.Boopathi"}>Dr.K.Boopathi</MenuItem>
                                     <MenuItem value={"Dr.G.Arivukkodi"}>Dr.G.Arivukkodi</MenuItem>
                                     <MenuItem value={"Mr.R.Vinod Kumar"}>Mr.R.Vinod Kumar</MenuItem>
                                     <MenuItem value={"Mr.B.Senthil Kumar"}>Mr.B.Senthil Kumar</MenuItem>

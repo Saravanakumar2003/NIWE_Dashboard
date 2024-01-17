@@ -5,12 +5,10 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import InfoIcon from '@mui/icons-material/Info';
 import IconButton from '@mui/material/IconButton';
-import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 
@@ -40,42 +38,211 @@ export default function ResponsiveDialog({ complaintData, myinfo }) {
                 onClose={handleClose}
                 aria-labelledby="responsive-dialog-title"
             >
-                <DialogTitle id="responsive-dialog-title">
-                    {"Complain Details "}
-                    {complaintData.complaintStatus === "pending" ?
-                        <Chip label="Pending" /> :
-                        complaintData.complaintStatus === "approved" ?
-                            <Chip label="Resolved" color="success" /> :
-                            <Chip label="Declined" color="error" />
-                    }
-                </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        <Typography variant="subtitle2" sx={{ display: "inline" }}>Issued To: </Typography>
-                        <Typography variant="body2" sx={{ display: "inline" }}>{complaintData.issuedTo}<br /></Typography>
-                        <Typography variant="subtitle2" sx={{ display: "inline" }}>Complain Type: </Typography>
-                        <Typography variant="body2" sx={{ display: "inline" }}>{complaintData.complaintType}<br /></Typography>
+                        <Typography variant="subtitle2" sx={{ display: "inline" }}>Status: </Typography>
+                        <Typography variant="body2" sx={{ display: "inline" }}>{complaintData.Status}<br /></Typography>
+                        <Typography variant="subtitle2" sx={{ display: "inline" }}>Priority: </Typography>
+                        <Typography variant="body2" sx={{ display: "inline" }}>{complaintData.Priority}<br /></Typography>
 
                         <TextField
-                            id="description"
-                            label="Description"
+                            id="dateofRequest"
+                            label="Date of Request"
                             multiline
                             fullWidth
                             sx={{ marginY: 2 }}
                             maxRows={6}
-                            value={complaintData.complaintDescription}
+                            value={complaintData.dateofRequest}
                             disabled
                         />
 
                         <TextField
-                            id="remarks"
-                            label="Remarks"
+                            id="deadline"
+                            label="Deadline"
                             multiline
                             fullWidth
                             maxRows={6}
-                            value={complaintData.remarks ? complaintData.remarks : ""}
+                            value={complaintData.deadline ? complaintData.deadline : ""}
                             disabled
                         />
+                        <TextField
+                            id="clientName"
+                            label="Client Name"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.clientName}
+                            disabled
+                        />
+
+                        <TextField
+                            id="dateofRequest"
+                            label="Date of Request"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.dateofRequest}
+                            disabled
+                        />
+                        <TextField
+                            id="ProjectDescription"
+                            label="Task Description"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.ProjectDescription}
+                            disabled
+                        />
+
+                        <TextField
+                            id="assignedTo"
+                            label="Assigned To"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.assignedTo}
+                            disabled
+                        />
+
+                        <TextField
+                            id="Deliverable"
+                            label="Deliverable"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Deliverable}
+                            disabled
+                        />
+
+                        <TextField
+                            id="DGApprovedDate"
+                            label="DG Approved Date"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.DGApprovedDate}
+                            disabled    
+                        />
+
+                        <TextField
+                            id="Agreement"
+                            label="Service Agreement Signed"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Agreement}
+                            disabled    
+                        />
+
+                        <TextField
+                            id="DraftApproved"
+                            label="Draft Approved date"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.DraftApproved}
+                            disabled    
+                        />
+
+                        <TextField
+                            id="dateSent"
+                            label="Draft Sent date"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.dateSent}
+                            disabled    
+                        />
+                        <TextField
+                            id="Prepared"
+                            label="Prepared By"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Prepared}
+                            disabled    
+                        />  
+                        <TextField
+                            id="Verified"
+                            label="Verified By"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Verified}
+                            disabled    
+                        />  
+                        <TextField
+                            id="Apprived"
+                            label="Approved By"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Apprived}
+                            disabled    
+                        />
+                        <TextField
+                            id="reportApproved"
+                            label="Date of Draft Report Approved by DG"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.reportApproved}
+                            disabled    
+                        />
+                        <TextField
+                            id="FeedbackRecived"
+                            label="Feedback recived"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.FeedbackRecived}
+                            disabled    
+                        />
+                        <TextField
+                            id="closure"
+                            label="Final closure date"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.closure}
+                            disabled    
+                        />
+                        <TextField
+                            id="Cost"
+                            label="Project cost Rs."
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Cost}
+                            disabled    
+                        />
+                        <TextField
+                            id="Remarks"
+                            label="Remarks"
+                            multiline
+                            fullWidth
+                            sx={{ marginY: 2 }}
+                            maxRows={6}
+                            value={complaintData.Remarks}
+                            disabled    
+                        />
+
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

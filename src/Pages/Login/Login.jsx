@@ -22,7 +22,7 @@ const Login = ({ currUser, notify }) => {
     const navigate = useNavigate()
     const theme = createTheme();
 
-    const [studentSignIn, setStudentSignIn] = useState(true) // if the user is signing in as a student or as an admin
+    const [studentSignIn] = useState(true) // if the user is signing in as a student or as an admin
 
     const [error, setError] = useState("this is") // error state to store the error message
     const [userData, setUserData] = useState({ // userData state to store the user data
@@ -151,19 +151,6 @@ const Login = ({ currUser, notify }) => {
                                     sx={{ mt: 3, mb: 2 }}
                                 >
                                     <LoginIcon sx={{ marginRight: 1 }} />Sign In
-                                </Button>
-                                <Button
-                                    fullWidth
-                                    color="error"
-                                    variant="outlined"
-                                    sx={{ mb: 2 }}
-                                    onClick={() => setStudentSignIn(!studentSignIn)}
-                                >
-                                    <LoginIcon sx={{ marginRight: 1 }} />Sign In as
-                                    {
-                                        studentSignIn ? " Admin" : " Student"
-                                    }
-
                                 </Button>
 
                                 <Grid container>

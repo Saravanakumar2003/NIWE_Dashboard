@@ -261,4 +261,4 @@ const Profile = ({ currUser, notify }) => {
     )
 }
 
-export default Profile
+export default Profile 
