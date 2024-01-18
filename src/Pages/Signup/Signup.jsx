@@ -41,7 +41,7 @@ const Signup = ({ currUser, notify }) => {
 
     useEffect(() => {
         if (currUser) {
-            navigate("/studentDashboard")
+            navigate("/Dashboard")
             return
         }
     }, [currUser, navigate])
@@ -61,7 +61,7 @@ const Signup = ({ currUser, notify }) => {
             // console.log(userCredential.user.uid)
             const newUserData = {
                 uid: userCredential.user.uid,
-                accountType: "Student",
+                accountType: "Employee",
                 name: userData.name,
                 phoneNo: userData.phoneNo,
                 email: userData.email,
@@ -74,7 +74,7 @@ const Signup = ({ currUser, notify }) => {
                 });
             console.log('Signed Up Successfully !');
             notify("Signed Up Successfully !", "success")
-            navigate("/studentDashboard")
+            navigate("/Dashboard")
 
         } catch (error) {
             setError(error.code.substring(error.code.indexOf('/') + 1).replaceAll("-", " "))

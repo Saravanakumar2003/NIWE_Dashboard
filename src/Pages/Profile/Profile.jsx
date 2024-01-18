@@ -146,18 +146,6 @@ const Profile = ({ currUser, notify }) => {
                                     <TextField
                                         required
                                         fullWidth
-                                        name=""
-                                        value={userData.accountType}
-                                        label="Account Type"
-                                        type="text"
-                                        id="accounttype"
-                                        disabled
-                                    />
-                                </Grid>
-                                <Grid item xs={12}>
-                                    <TextField
-                                        required
-                                        fullWidth
                                         id="email"
                                         label="Email Address"
                                         name=""

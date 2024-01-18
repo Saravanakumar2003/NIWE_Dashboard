@@ -16,36 +16,36 @@ import image from "../Assets/niwe.png"
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-
+import People from '@mui/icons-material/People';
 
 const Header = ({ currUser }, props) => {
     let navigate = useNavigate();
-    const signOutFunction = async () => { 
+    const signOutFunction = async () => {
         try {
             signOut(auth) // Sign out the user
-            console.log('Signed Out Successfully !'); 
+            console.log('Signed Out Successfully !');
             navigate("/") // Redirect to the home page
-        } catch (error) { 
+        } catch (error) {
             console.error(error); // This will print any error that occurred while signing out
         }
     }
 
-    const [navbar, setNavbar] = useState({  
-        'left': false, 
-        'right': false, 
+    const [navbar, setNavbar] = useState({
+        'left': false,
+        'right': false,
     })
 
-    const toggleDrawer = (anchor, open) => (event) => {  
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) { 
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
 
         setNavbar({ ...navbar, [anchor]: open }); // Set the navbar state
     };
 
-    const list = (anchor) => ( 
+    const list = (anchor) => (
         <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }} 
+            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
@@ -56,7 +56,7 @@ const Header = ({ currUser }, props) => {
 
                         <List>
                             <ListItem button onClick={() => navigate("/")}>
-                                <ListItemIcon> 
+                                <ListItemIcon>
                                     <HomeIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Home" />
@@ -67,18 +67,27 @@ const Header = ({ currUser }, props) => {
                                 </ListItemIcon>
                                 <ListItemText primary="Contact Us" />
                             </ListItem>
-                            <ListItem button onClick={() => navigate("/userdashboard")}>
+                            <Divider />
+                            <ListItem button onClick={() => navigate("/addproject")}>
+                                <ListItemIcon>
+                                    <AddchartIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Add Project" />
+                            </ListItem>
+                            <ListItem button onClick={() => navigate("/dashboard")}>
                                 <ListItemIcon>
                                     <DashboardIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="User Dashboard" />
+                                <ListItemText primary="Projects" />
                             </ListItem>
-                            <ListItem button onClick={() => navigate("/admindashboard")}>
+                            <Divider />
+                            <ListItem button onClick={signOutFunction}>
                                 <ListItemIcon>
-                                    <DashboardIcon />
+                                    <LogoutIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Admin Dashboard" />
+                                <ListItemText primary="Logout" />
                             </ListItem>
+
                         </List>
 
                     </> :
@@ -91,11 +100,11 @@ const Header = ({ currUser }, props) => {
                                 </ListItemIcon>
                                 <ListItemText primary="Profile" />
                             </ListItem>
-                            <ListItem button onClick={() => navigate("/studentDashboard")}>
+                            <ListItem button onClick={() => navigate("/dashboard")}>
                                 <ListItemIcon>
                                     <DashboardIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Dashboard" />
+                                <ListItemText primary="Projects" />
                             </ListItem>
                             <Divider />
                             <ListItem button onClick={signOutFunction}>
@@ -128,7 +137,7 @@ const Header = ({ currUser }, props) => {
                                         component="h6"
                                         sx={{ flexGrow: 1, display: { xs: 'none', md: "flex" } }}
                                     >
-                                       NIWE
+                                        NIWE
                                     </Typography>
                                     <Typography
                                         variant="h6"
@@ -146,7 +155,7 @@ const Header = ({ currUser }, props) => {
                                     </Typography>
 
                                     <Typography variant="h5" component="h5" sx={{ display: { xs: "block", md: "none" }, fontWeight: "bolder", color: "#008336" }}>
-                                    PROJECT MANAGEMENT SYSTEM
+                                        PROJECT MANAGEMENT SYSTEM
                                     </Typography>
                                 </Box>
                                 <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: { xs: "center", md: "start" }, marginLeft: { xs: 0, md: 2 }, alignItems: "center", borderLeft: "2px solid grey" }}>
@@ -165,7 +174,7 @@ const Header = ({ currUser }, props) => {
                                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                                     <IconButton
                                         size="large" // small is equivalent to the dense button styling
-                                        aria-label="account of current user" 
+                                        aria-label="account of current user"
                                         aria-controls="menu-appbar"
                                         aria-haspopup="true"
                                         onClick={toggleDrawer('left', true)}
@@ -192,10 +201,31 @@ const Header = ({ currUser }, props) => {
                                     </Button>
                                     <Button
                                         sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
-                                        onClick={() => navigate("/studentdashboard")}
+                                        onClick={() => navigate("/dashboard")}
                                     >
                                         <DashboardIcon sx={{ marginRight: 1 }} />
-                                        Dashboard
+                                        Projects
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
+                                        onClick={() => navigate("/addemployee")}
+                                    >
+                                        <People sx={{ marginRight: 1 }} />
+                                        Employees
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
+                                        onClick={() => navigate("/myattendance")}
+                                    >
+                                        <AccountCircleIcon sx={{ marginRight: 1 }} />
+                                        Attendance
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
+                                        onClick={() => navigate("/attendancedashboard")}
+                                    >
+                                        <AccountCircleIcon sx={{ marginRight: 1 }} />
+                                        Attendance Dashboard
                                     </Button>
                                     <Button
                                         sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}

@@ -28,7 +28,7 @@ const Home = () => {
                         variant="contained"
                         color="success"
                         sx={{ px: 3, py: 1 }}
-                        onClick={() => navigate("/studentDashboard")}
+                        onClick={() => navigate("/Dashboard")}
                     >
                         Manage Projects
                     </Button>
@@ -89,7 +89,7 @@ export default Home
 const SideNotification = () => { // SideNotification
     const [allNotifications, setAllNotifications] = React.useState([]) // allNotifications
     React.useEffect(() => { 
-        const q = query(collection(db, "empowerkids_notification"));// query to get the user info from the database
+        const q = query(collection(db, "niwe_notification"));// query to get the user info from the database
         const unsubscribe = onSnapshot(q, (querySnapshot) => { // onSnapshot
             let tempNotific = [] // temporary variable to store the user info
             querySnapshot.forEach((doc) => { // for each document in the querySnapshot

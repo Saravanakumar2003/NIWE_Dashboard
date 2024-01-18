@@ -22,7 +22,7 @@ const Login = ({ currUser, notify }) => {
     const navigate = useNavigate()
     const theme = createTheme();
 
-    const [studentSignIn] = useState(true) // if the user is signing in as a student or as an admin
+    const [EmployeeSignIn] = useState(true)
 
     const [error, setError] = useState("this is") // error state to store the error message
     const [userData, setUserData] = useState({ // userData state to store the user data
@@ -32,10 +32,10 @@ const Login = ({ currUser, notify }) => {
 
     useEffect(() => {
         if (currUser) { // if the currUser state is not empty
-            navigate("/studentDashboard") 
+            navigate("/Dashboard") 
             return
         }
-    }, [currUser, navigate]) // if the currUser state changes, navigate to the student dashboard
+    }, [currUser, navigate]) 
 
     useEffect(() => { // when the component is mounted
         setError("") // set the error to empty
@@ -45,8 +45,8 @@ const Login = ({ currUser, notify }) => {
         try { 
             await signInWithEmailAndPassword(auth, userData.email, userData.password) 
             console.log('Signed In Successfully !'); // log the success message
-            if (studentSignIn) {
-                navigate("/studentDashboard") 
+            if (EmployeeSignIn) {
+                navigate("/Dashboard") 
             }
         } catch (error) { // if error occurs
             setError(error.code.substring(error.code.indexOf('/') + 1).replaceAll("-", " ")) // set the error to the error code
@@ -99,7 +99,7 @@ const Login = ({ currUser, notify }) => {
                             </Avatar>
                             <Typography component="h1" variant="h5">
                                 {
-                                    studentSignIn ? "Student | " : "Admin | "
+                                    EmployeeSignIn ? "Employee | " : "Admin | "
                                 }
                                 Sign in
                             </Typography>

@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
-import NewProjectForm from "./NewProjectForm"
+import NewEmployeeForm from "./NewEmployeeForm"
 import Paper from '@mui/material/Paper';
 import { useNavigate } from "react-router-dom";
 import { collection, query, onSnapshot, where } from "firebase/firestore";
 import { db } from "../../Firebase/firebaseConfig"
 import React, { useEffect } from "react"
 import { useState } from "react";
+import MyEmployee from "./MyEmployees";
 
 
-const AddProject = ({ currUser, notify }) => {
+const AddEmployee = ({ currUser, notify }) => {
     const navigate = useNavigate()
 
     const [myinfo, setmyinfo] = useState({})
@@ -16,7 +17,7 @@ const AddProject = ({ currUser, notify }) => {
     useEffect(() => {
         if (myinfo && myinfo.accountType) {
             if (myinfo.accountType === "Employee") {
-                navigate("/addProject")
+                navigate("/addEmployee")
             }
         }
     }, [myinfo, navigate])
@@ -44,12 +45,13 @@ const AddProject = ({ currUser, notify }) => {
     return (
         <>
             <Paper elevation={6} sx={{ my: 3, p: 3 }}>
-                <NewProjectForm currUser={currUser} myinfo={myinfo} notify={notify} />
+                <NewEmployeeForm currUser={currUser} myinfo={myinfo} notify={notify} />
+                <MyEmployee currUser={currUser} myinfo={myinfo} notify={notify} />
             </Paper>
         </>
     )
 }
 
-export default AddProject
+export default AddEmployee
 
-//
+//Path: src/Pages/Employee/MyEmployees.jsx
