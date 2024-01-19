@@ -37,6 +37,7 @@ const NewProjectForm = ({ currUser, myinfo, notify }) => {
         closure: "",
         Cost: "",
         Remarks: "",
+        ProjectType: "",
     })
 
     const [error, setError] = useState("")
@@ -78,6 +79,7 @@ const NewProjectForm = ({ currUser, myinfo, notify }) => {
                 closure: "",
                 Cost: "",
                 Remarks: "",
+                ProjectType: "",
             })
             notify("Project Registered", "success")
 
@@ -175,6 +177,10 @@ const NewProjectForm = ({ currUser, myinfo, notify }) => {
         }
         if (projectInfo.Remarks === "") {
             setError("Remarks is required")
+            return
+        }
+        if (projectInfo.ProjectType === "") {
+            setError("Project Type is required")
             return
         }
 
@@ -557,6 +563,28 @@ const NewProjectForm = ({ currUser, myinfo, notify }) => {
                                 id="Remarks"
                                 label="Remarks"                              
                             />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <InputLabel id="ProjectType">Project Type</InputLabel>
+                                <Select
+                                    labelId="ProjectType"
+                                    id="ProjectType"
+                                    required
+                                    value={projectInfo.ProjectType}
+                                    label="ProjectType"
+                                    onChange={(e) => setProjectInfo({ ...projectInfo, ProjectType: e.target.value })}
+                                >
+                                    <MenuItem value={"WRA Consultancy Projects"}>WRA Consultancy Projects</MenuItem>
+                                    <MenuItem value={"Wind Monitoring Stations"}>Wind Monitoring Stations</MenuItem>
+                                    <MenuItem value={"WMS Consultancy Projects"}>WMS Consultancy Projects</MenuItem>
+                                    <MenuItem value={"MNRE Projects WMS"}>MNRE Projects WMS</MenuItem>
+                                    <MenuItem value={"MNRE other Projects"}>MNRE other Projects</MenuItem>
+                                    <MenuItem value={"RE Projects"}>RE Projects</MenuItem>
+                                    <MenuItem value={"PMC"}>PMC</MenuItem>
+                                    <MenuItem value={"SRRA"}>SRRA</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Grid>
                         
                         {error ?

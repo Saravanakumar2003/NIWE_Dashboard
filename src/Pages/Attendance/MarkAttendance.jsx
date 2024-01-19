@@ -8,6 +8,7 @@ const MarkAttendance = ({ notify }) => {
   const [attendanceInfo, setAttendanceInfo] = useState({
     employeeName: "",
     date: "",
+    attendance: "",
   });
 
   const [error, setError] = useState("");
@@ -42,6 +43,7 @@ const MarkAttendance = ({ notify }) => {
       setAttendanceInfo({
         employeeName: "",
         date: "",
+        attendance: "",
       });
 
       notify("Attendance Marked Successfully", "success");
@@ -101,7 +103,23 @@ const MarkAttendance = ({ notify }) => {
           }}
         />
 
-        
+      {/* Attendance Dropdown */}
+      <FormControl fullWidth sx={{ mt: 2 }}>
+        <InputLabel htmlFor="attendance">Attendance</InputLabel>
+        <Select
+          value={attendanceInfo.attendance}
+          onChange={handleChange}
+          label="Attendance"
+          inputProps={{ name: "attendance", id: "attendance" }}
+        >
+          <MenuItem value="Present">Present</MenuItem>
+          <MenuItem value="Absent">Absent</MenuItem>
+          <MenuItem value="Half Day">Half Day</MenuItem>
+          <MenuItem value="Tour">Tour</MenuItem>
+          <MenuItem value="Leave">Leave</MenuItem>
+          <MenuItem value="Holiday">Holiday</MenuItem>
+        </Select>
+      </FormControl>
 
       {error ? (
         <Alert severity="error" sx={{ mt: 2 }}>

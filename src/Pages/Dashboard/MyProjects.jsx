@@ -84,31 +84,28 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
         case "1":
           break;
         case "2":
-          if (data.Status !== "Not Started") return result;
+          if (data.ProjectType !== "WRA Consultancy Projects") return result;
           break;
         case "3":
-          if (data.Status !== "Waiting for customer approval") return result;
+          if (data.ProjectType !== "WRA Consultancy Projects") return result;
           break;
         case "4":
-          if (data.Status !== "Feedback recieved") return result;
+          if (data.ProjectType !== "WRA Consultancy Projects") return result;
           break;
         case "5":
-          if (data.Status !== "In Progress") return result;
+          if (data.ProjectType !== "MNRE Projects WMS") return result;
           break;
         case "6":
-          if (data.Status !== "Completed") return result;
+          if (data.ProjectType !== "MNRE other Projects") return result;
           break;
         case "7":
-          if (data.Status !== "On Hold") return result;
+          if (data.ProjectType !== "RE Projects") return result;
           break;
         case "8":
-          if (data.Status !== "Overdue") return result;
+          if (data.ProjectType !== "PMC") return result;
           break;
         case "9":
-          if (data.Status !== "Feedback not received") return result;
-          break;
-        case "10":
-          if (data.Status !== "Waiting for DG approval") return result;
+          if (data.ProjectType !== "SRRA") return result;
           break;
         default:
           break;
@@ -192,7 +189,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Status",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -200,7 +197,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Priority",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -208,7 +205,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Date of Request",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -216,7 +213,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Deadline",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -224,7 +221,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Client Name",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -232,15 +229,15 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Project Name",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
       field: "ProjectDescription",
       headerName: "Task Description",
-      flex: 1,
+      flex: 5,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -248,7 +245,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Assigned To",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -256,7 +253,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Deliverable",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -264,7 +261,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "DG Approved Date",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -272,7 +269,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Service Agreement Signed",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -280,7 +277,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Draft Approved Date",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -288,7 +285,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Draft Sent date",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -296,7 +293,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Prepared By",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -304,7 +301,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Verified By",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -312,7 +309,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Apprived By",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -320,7 +317,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Date of Draft Report Approved by DG",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -328,7 +325,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Feedback Recieved",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -336,7 +333,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Final closure date",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -344,7 +341,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       headerName: "Remarks",
       flex: 1,
       minWidth: 200,
-      renderCell: renderCellExpand,
+      renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
@@ -413,15 +410,14 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
                                     variant="scrollable"
                                     aria-label="lab API tabs example">
                                     <Tab label="All" value="1" />
-                                    <Tab label="Not Started" value="2" />
-                                    <Tab label="Waiting for customer approval" value="3" />
-                                    <Tab label="Feedback recieved" value="4" />
-                                    <Tab label="In Progress" value="5" />
-                                    <Tab label="Completed" value="6" />
-                                    <Tab label="On Hold" value="7" />
-                                    <Tab label="Overdue" value="8" />
-                                    <Tab label="Feedback not received" value="9" />
-                                    <Tab label="Waiting for DG approval" value="10" />
+                                    <Tab label="WRA Consultancy Projects" value="2" />
+                                    <Tab label="Wind Monitoring Stations" value="3" />
+                                    <Tab label="WMS Consultancy Projects" value="4" />
+                                    <Tab label="MNRE Projects WMS" value="5" />
+                                    <Tab label="MNRE other Projects" value="6" />
+                                    <Tab label="RE Projects" value="7" />
+                                    <Tab label="PMC" value="8" />
+                                    <Tab label="SRRA" value="9" />
                                 </TabList>
                             </Box>
                         </TabContext>
@@ -432,12 +428,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
             columns={columns}
             pageSize={pageSize}
             onPageSizeChange={(newPage) => setPageSize(newPage)}
-            rowsPerPageOptions={[5, 10, 20, 50]}
-
-            disableSelectionOnClick
-            disableColumnMenu
-            disableColumnSelector
-            disableDensitySelector
+            rowsPerPageOptions={[5, 10, 20, 50, 100]}
             autoHeight
             components={{
               Toolbar: GridToolbar,
@@ -538,10 +529,17 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
   );
 };
 
-const renderCellExpand = (params) => {
+const RenderCellExpand = (props) => {
   return (
-    <Box sx={{ maxWidth: 300 }}>
-      <Typography noWrap>{params.value}</Typography>
+    <Box 
+    sx={{ 
+      width: 300,
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+      display: "block",
+      wordBreak: "break-word",
+     }}>
+      <Typography noWrap>{props.value}</Typography>
     </Box>
   );
 };
