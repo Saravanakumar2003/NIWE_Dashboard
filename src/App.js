@@ -22,8 +22,8 @@ import Dashboard from "./Pages/Dashboard/Dashboard"
 import AddProject from "./Pages/AddProject/AddProject"
 import ContactUs from "./Pages/ContactUs/ContactUs"
 import AddEmployee from "./Pages/Employee/AddEmployee";
-import MarkAttendance from "./Pages/Attendance/MarkAttendance";
-import AttendanceDashboard from "./Pages/Attendance/AttendanceDashboard";
+import MyAttendance from "./Pages/Attendance/MyAttendance";
+
 
 
 const App = () => {
@@ -75,8 +75,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard currUser={currUser} notify={notify} />} />
             <Route path="/addProject" element={<AddProject currUser={currUser} notify={notify} />} />
             <Route path="/addemployee" element={<AddEmployee currUser={currUser} notify={notify} />} />
-            <Route path="/myattendance" element={<MarkAttendance currUser={currUser} notify={notify} />} />
-            <Route path="/attendancedashboard" element={<AttendanceDashboard currUser={currUser} notify={notify} />} />
+            <Route path="/myattendance" element={<MyAttendance currUser={currUser} notify={notify} />} />
             </Routes>
 
         </Container>

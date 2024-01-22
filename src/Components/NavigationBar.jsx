@@ -81,6 +81,20 @@ const Header = ({ currUser }, props) => {
                                 <ListItemText primary="Projects" />
                             </ListItem>
                             <Divider />
+                            <ListItem button onClick={() => navigate("/addemployee")}>
+                                <ListItemIcon>
+                                    <People />
+                                </ListItemIcon>
+                                <ListItemText primary="Employees" />
+                            </ListItem>
+
+                            <ListItem button onClick={() => navigate("/myattendance")}>
+                                <ListItemIcon>
+                                    <AccountCircleIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Attendance" />
+                            </ListItem>
+                            <Divider />
                             <ListItem button onClick={signOutFunction}>
                                 <ListItemIcon>
                                     <LogoutIcon />
@@ -220,13 +234,7 @@ const Header = ({ currUser }, props) => {
                                         <AccountCircleIcon sx={{ marginRight: 1 }} />
                                         Attendance
                                     </Button>
-                                    <Button
-                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
-                                        onClick={() => navigate("/attendancedashboard")}
-                                    >
-                                        <AccountCircleIcon sx={{ marginRight: 1 }} />
-                                        Attendance Dashboard
-                                    </Button>
+
                                     <Button
                                         sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
                                         onClick={() => navigate("/contactus")}

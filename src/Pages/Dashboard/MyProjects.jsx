@@ -53,6 +53,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
     "Remarks",
   ];
 
+
   useEffect(() => {
     if (!myinfo || !myinfo.uid) return;
     const q = query(
@@ -155,40 +156,28 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
   };
 
   const columns = [
-    { field: "id", headerName: "Sr No.", type: "number", width: 60 },
+    { field: "id", headerName: "Sr No.", type: "number", width: 50},
     {
-        field: "Info",
-        headerName: "Info",
-        width: 80,
-        sortable: false,
-        renderCell: (params) => {
-          return (
-            <>
-              <ProjectInfo
-               projectData={params.row} 
-               myinfo={myinfo}
-               />
-            </>
-          );
-        },
+      field: "Info",
+      headerName: "Info",
+      width: 30,
+      sortable: false,
+      renderCell: (params) => {
+        return (
+          <>
+            <ProjectInfo
+              projectData={params.row}
+              myinfo={myinfo}
+            />
+          </>
+        );
       },
-    {
-      field: "scheduleDate",
-      headerName: "Date",
-      valueGetter: (params) =>
-        params.row.issuedDate &&
-        new Date(params.row.issuedDate).toLocaleDateString(),
-    },
-    {
-      field: "issuedDate",
-      headerName: "Time",
-      valueGetter: ({ value }) => value && new Date(value).toLocaleTimeString(),
     },
     {
       field: "Status",
       headerName: "Status",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -196,7 +185,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Priority",
       headerName: "Priority",
       flex: 1,
-      minWidth: 200,
+      minWidth: 100,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -204,7 +193,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "dateofRequest",
       headerName: "Date of Request",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -212,7 +201,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "deadline",
       headerName: "Deadline",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -220,7 +209,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "clientName",
       headerName: "Client Name",
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -228,15 +217,15 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "projectName",
       headerName: "Project Name",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
     {
       field: "ProjectDescription",
       headerName: "Task Description",
-      flex: 5,
-      minWidth: 200,
+      flex: 1,
+      minWidth: 600,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -244,7 +233,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "assignedTo",
       headerName: "Assigned To",
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -252,7 +241,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Deliverable",
       headerName: "Deliverable",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -260,7 +249,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "DGApprovedDate",
       headerName: "DG Approved Date",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -268,7 +257,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Agreement",
       headerName: "Service Agreement Signed",
       flex: 1,
-      minWidth: 200,
+      minWidth: 50,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -276,7 +265,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "DraftApproved",
       headerName: "Draft Approved Date",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -284,7 +273,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "dateSent",
       headerName: "Draft Sent date",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -292,7 +281,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Prepared",
       headerName: "Prepared By",
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -300,7 +289,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Verified",
       headerName: "Verified By",
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -308,7 +297,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Apprived",
       headerName: "Apprived By",
       flex: 1,
-      minWidth: 200,
+      minWidth: 150,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -316,7 +305,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "reportApproved",
       headerName: "Date of Draft Report Approved by DG",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -332,9 +321,10 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "closure",
       headerName: "Final closure date",
       flex: 1,
-      minWidth: 200,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
+      Divider: true,
     },
     {
       field: "Remarks",
@@ -399,30 +389,30 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
           >
             Total Projects: {filteredProjects.length}
           </Typography>
-          
+
 
           <Grid item xs={12}>
-                    <Box sx={{ width: '100%', typography: 'body1' }}>
-                        <TabContext value={tabPage}>
-                            <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                                <TabList
-                                    onChange={handleChangeTabPage}
-                                    variant="scrollable"
-                                    aria-label="lab API tabs example">
-                                    <Tab label="All" value="1" />
-                                    <Tab label="WRA Consultancy Projects" value="2" />
-                                    <Tab label="Wind Monitoring Stations" value="3" />
-                                    <Tab label="WMS Consultancy Projects" value="4" />
-                                    <Tab label="MNRE Projects WMS" value="5" />
-                                    <Tab label="MNRE other Projects" value="6" />
-                                    <Tab label="RE Projects" value="7" />
-                                    <Tab label="PMC" value="8" />
-                                    <Tab label="SRRA" value="9" />
-                                </TabList>
-                            </Box>
-                        </TabContext>
-                    </Box>
-                </Grid>
+            <Box sx={{ width: '100%', typography: 'body1' }}>
+              <TabContext value={tabPage}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <TabList
+                    onChange={handleChangeTabPage}
+                    variant="scrollable"
+                    aria-label="lab API tabs example">
+                    <Tab label="All" value="1" />
+                    <Tab label="WRA Consultancy Projects" value="2" />
+                    <Tab label="Wind Monitoring Stations" value="3" />
+                    <Tab label="WMS Consultancy Projects" value="4" />
+                    <Tab label="MNRE Projects WMS" value="5" />
+                    <Tab label="MNRE other Projects" value="6" />
+                    <Tab label="RE Projects" value="7" />
+                    <Tab label="PMC" value="8" />
+                    <Tab label="SRRA" value="9" />
+                  </TabList>
+                </Box>
+              </TabContext>
+            </Box>
+          </Grid>
           <DataGrid
             rows={filteredProjects}
             columns={columns}
@@ -430,9 +420,12 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
             onPageSizeChange={(newPage) => setPageSize(newPage)}
             rowsPerPageOptions={[5, 10, 20, 50, 100]}
             autoHeight
+            rowHeight={200}
+            disableDensitySelector
             components={{
               Toolbar: GridToolbar,
             }}
+            
             componentsProps={{
               toolbar: { showQuickFilter: true },
             }}
@@ -450,44 +443,44 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
                       field === "Status"
                         ? "Status"
                         : field === "Priority"
-                        ? "Priority"
-                        : field === "dateofRequest"
-                        ? "Date of Request"
-                        : field === "deadline"
-                        ? "Deadline"
-                        : field === "clientName"
-                        ? "Client Name"
-                        : field === "projectName"
-                        ? "Project Name"
-                        : field === "ProjectDescription"
-                        ? "Task Description"
-                        : field === "assignedTo"
-                        ? "Assigned To"
-                        : field === "Deliverable"
-                        ? "Deliverable"
-                        : field === "DGApprovedDate"
-                        ? "DG Approved Date"
-                        : field === "Agreement"
-                        ? "Service Agreement Signed"
-                        : field === "DraftApproved"
-                        ? "Draft Approved Date"
-                        : field === "dateSent"
-                        ? "Draft Sent date"
-                        : field === "Prepared"
-                        ? "Prepared By"
-                        : field === "Verified"
-                        ? "Verified By"
-                        : field === "Apprived"
-                        ? "Apprived By"
-                        : field === "reportApproved"
-                        ? "Date of Draft Report Approved by DG"
-                        : field === "FeedbackRecived"
-                        ? "Feedback Recieved"
-                        : field === "closure"
-                        ? "Final closure date"
-                        : field === "Remarks"
-                        ? "Remarks"
-                        : ""
+                          ? "Priority"
+                          : field === "dateofRequest"
+                            ? "Date of Request"
+                            : field === "deadline"
+                              ? "Deadline"
+                              : field === "clientName"
+                                ? "Client Name"
+                                : field === "projectName"
+                                  ? "Project Name"
+                                  : field === "ProjectDescription"
+                                    ? "Task Description"
+                                    : field === "assignedTo"
+                                      ? "Assigned To"
+                                      : field === "Deliverable"
+                                        ? "Deliverable"
+                                        : field === "DGApprovedDate"
+                                          ? "DG Approved Date"
+                                          : field === "Agreement"
+                                            ? "Service Agreement Signed"
+                                            : field === "DraftApproved"
+                                              ? "Draft Approved Date"
+                                              : field === "dateSent"
+                                                ? "Draft Sent date"
+                                                : field === "Prepared"
+                                                  ? "Prepared By"
+                                                  : field === "Verified"
+                                                    ? "Verified By"
+                                                    : field === "Apprived"
+                                                      ? "Apprived By"
+                                                      : field === "reportApproved"
+                                                        ? "Date of Draft Report Approved by DG"
+                                                        : field === "FeedbackRecived"
+                                                          ? "Feedback Recieved"
+                                                          : field === "closure"
+                                                            ? "Final closure date"
+                                                            : field === "Remarks"
+                                                              ? "Remarks"
+                                                              : ""
                     }
                     value={editedProject[field]}
                     onChange={(e) => handleFieldChange(field, e.target.value)}
@@ -531,15 +524,23 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
 
 const RenderCellExpand = (props) => {
   return (
-    <Box 
-    sx={{ 
-      width: 300,
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      display: "block",
-      wordBreak: "break-word",
-     }}>
-      <Typography noWrap>{props.value}</Typography>
+    <Box
+      sx={{
+        width: 600,
+        maxHeight: 200, 
+        overflow: 'auto', 
+        textOverflow: "ellipsis",
+        whiteSpace: "pre-line", 
+        display: "block",
+        wordBreak: "break-word",
+        padding: 1,
+        '& .MuiTypography-root': {
+          fontSize: '0.8rem',
+          textAlign: 'justify', 
+        },
+      }}
+    >
+      <Typography>{props.value}</Typography>
     </Box>
   );
 };
