@@ -106,7 +106,7 @@ const NewEmployeeForm = ({ currUser, myinfo, notify }) => {
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
-                                label="Namee"
+                                label="Name"
                             />
                         </Grid>
                         <Grid item xs={12}>

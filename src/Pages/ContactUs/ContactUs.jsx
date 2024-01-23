@@ -10,7 +10,6 @@ const ContactUs = () => {
                 <Typography align="center" variant="body1" sx={{ marginTop: 2 }}>
                     For any inquiries or assistance, feel free to reach out to the developer:
                 </Typography>
-
                 <Typography align="center" variant="body1" sx={{ marginTop: 2 }}>
                     <strong>Email:</strong> saravanaramaswamy2003@gmail.com
                 </Typography>
@@ -23,7 +22,6 @@ const ContactUs = () => {
                 <Typography align="center" variant="body1" sx={{ marginBottom: 2 }}>
                     <strong>GitHub:</strong> <a href="https://github.com/Saravanakumar2003">Saravanakumar2003</a>
                 </Typography>
-
                 <div style={{ position: 'relative', height: 1000, paddingBottom: '50%' }}>
                     <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSeMuH-puUYDge6SNIB_2N3pi4Y24DKaZmii0ySokmZAF8XMgQ/viewform?embedded=true"

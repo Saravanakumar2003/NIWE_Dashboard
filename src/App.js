@@ -23,7 +23,8 @@ import AddProject from "./Pages/AddProject/AddProject"
 import ContactUs from "./Pages/ContactUs/ContactUs"
 import AddEmployee from "./Pages/Employee/AddEmployee";
 import MyAttendance from "./Pages/Attendance/MyAttendance";
-
+import MyTodo from "./Pages/TodoList/mytodo";
+import MyEvents from "./Pages/Events/MyEvents";
 
 
 const App = () => {
@@ -76,6 +77,8 @@ const App = () => {
             <Route path="/addProject" element={<AddProject currUser={currUser} notify={notify} />} />
             <Route path="/addemployee" element={<AddEmployee currUser={currUser} notify={notify} />} />
             <Route path="/myattendance" element={<MyAttendance currUser={currUser} notify={notify} />} />
+            <Route path="/mytodo" element={<MyTodo currUser={currUser} notify={notify} />} />
+            <Route path="/myevents" element={<MyEvents currUser={currUser} notify={notify} />} />
             </Routes>
 
         </Container>

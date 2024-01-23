@@ -27,6 +27,15 @@ const AttendanceDashboard = ({ notify }) => {
     };
   }, []);
 
+  useEffect(() => {
+    let index = 1;
+    attendanceData.forEach((data) => {
+      data.id = index;
+      index++;
+    });
+  }, [attendanceData]);
+
+
   const [setError] = useState("");
 
   const deleteData = async (data) => {
@@ -38,10 +47,16 @@ const AttendanceDashboard = ({ notify }) => {
       console.error(error);
     }
   };
+  
 
   const columns = [
     //serial number
-    
+    {
+      field: "id",
+      headerName: "ID",
+      width: 80,
+      sortable: false,
+    },
     //employee name
     { field: "employeeName", headerName: "Employee Name", width: 200 },
     // Add more columns for date, timeIn, timeOut, etc.

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { auth } from "../Firebase/firebaseConfig"
 import { signOut } from 'firebase/auth';
 
-import { AppBar, Box, Toolbar, ListItemIcon, IconButton, Typography, Container, Avatar, Button, Tooltip, Drawer, List, Divider, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Box, Toolbar, ListItemIcon, IconButton, Container, Avatar, Button, Tooltip, Drawer, List, Divider, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -12,11 +12,12 @@ import LoginIcon from '@mui/icons-material/Login';
 import AddchartIcon from '@mui/icons-material/Addchart';
 import PermContactCalendarIcon from '@mui/icons-material/PermContactCalendar';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import image from "../Assets/niwe.png"
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import People from '@mui/icons-material/People';
+import EventNoteIcon from '@mui/icons-material/EventNote';
+import ListAltIcon from '@mui/icons-material/ListAlt';
 
 const Header = ({ currUser }, props) => {
     let navigate = useNavigate();
@@ -139,48 +140,6 @@ const Header = ({ currUser }, props) => {
             <HideOnScroll {...props}>
 
                 <Box>
-                    <AppBar position="static" sx={{ background: "white", color: "black" }}>
-
-                        <Container maxWidth="xl" >
-                            <Toolbar disableGutters sx={{ paddingY: 2 }}>
-
-                                <img src={image} alt="empowerlogo" style={{ height: "100px", padding: "10px" }} />
-                                <Box sx={{ display: "flex", flexFlow: "column", cursor: "pointer" }} onClick={() => window.open("", '_blank')}>
-                                    <Typography
-                                        variant="h6"
-                                        component="h6"
-                                        sx={{ flexGrow: 1, display: { xs: 'none', md: "flex" } }}
-                                    >
-                                        NIWE
-                                    </Typography>
-                                    <Typography
-                                        variant="h6"
-                                        sx={{ textAlign: { xs: "start", md: "center" }, display: { xs: "block", md: "none" } }}
-                                        component="h6"
-                                    >
-                                        NIWE
-                                    </Typography>
-                                    <Typography
-                                        variant="subtitle2"
-                                        sx={{ textAlign: { xs: "start", md: "center" } }}
-                                        component="p"
-                                    >
-                                        National Institute of Wind Energy
-                                    </Typography>
-
-                                    <Typography variant="h5" component="h5" sx={{ display: { xs: "block", md: "none" }, fontWeight: "bolder", color: "#008336" }}>
-                                        PROJECT MANAGEMENT SYSTEM
-                                    </Typography>
-                                </Box>
-                                <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: { xs: "center", md: "start" }, marginLeft: { xs: 0, md: 2 }, alignItems: "center", borderLeft: "2px solid grey" }}>
-                                    <Typography variant="h4" component="h4" sx={{ fontWeight: "bolder", padding: 2, color: "#008336" }}>
-                                        PROJECT MANAGEMENT SYSTEM
-                                    </Typography>
-
-                                </Box>
-                            </Toolbar>
-                        </Container>
-                    </AppBar>
                     <AppBar position="sticky" sx={{ background: "#008336" }}>
 
                         <Container maxWidth="xl" >
@@ -234,7 +193,20 @@ const Header = ({ currUser }, props) => {
                                         <AccountCircleIcon sx={{ marginRight: 1 }} />
                                         Attendance
                                     </Button>
-
+                                    <Button
+                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
+                                        onClick={() => navigate("/mytodo")}
+                                    >
+                                        <ListAltIcon sx={{ marginRight: 1 }} />
+                                        ToDo List
+                                    </Button>
+                                    <Button
+                                        sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
+                                        onClick={() => navigate("/myevents")}
+                                    >
+                                        <EventNoteIcon sx={{ marginRight: 1 }} />
+                                        Events
+                                    </Button>
                                     <Button
                                         sx={{ my: 2, color: 'white', display: 'flex', alignItems: "center" }}
                                         onClick={() => navigate("/contactus")}
