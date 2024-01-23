@@ -61,27 +61,6 @@ const Todoform = ({ currUser, myinfo, notify }) => {
         e.preventDefault()
         setError("")
 
-        if (todoInfo.name === "") {
-            setError("Todo Name is required")
-            return
-        }
-        if (todoInfo.date === "") {
-            setError("Date is required")
-            return
-        }
-        if (todoInfo.description === "") {
-            setError("Description is required")
-            return
-        }
-        if (todoInfo.status === "") {
-            setError("Status is required")
-            return
-        }
-        if (todoInfo.type === "") {
-            setError("Type is required")
-            return
-        }
-
         registerTodo()
     }
 

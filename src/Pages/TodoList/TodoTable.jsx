@@ -69,7 +69,7 @@ const[ filteredTodo, setFilteredTodo ] = useState([]);
             if (data.type !== "Todo") return result;
             break;
         case "3":
-            if (data.type !== "Daily Activites") return result;
+            if (data.type !== "Daily Activities") return result;
             break;
         default:
           break;
@@ -119,10 +119,10 @@ const[ filteredTodo, setFilteredTodo ] = useState([]);
   };
 
   const columns = [
-    { field: "id", headerName: "Sr No.", type: "number", width: 60 },
+    { field: "id", headerName: "Sr No.", type: "number", width: 60, },
     { field: "name", headerName: "Todo Name", width: 300 },
     {field: "date", headerName: "Date", width: 150},
-    {field: "description", headerName: "Description", width: 500},
+    {field: "description", headerName: "Description", width: 500, renderCell: (params) => <RenderCellExpand value={params.value} />},
     {field: "status", headerName: "Status", width: 200},
     {
       field: "Delete",
@@ -205,6 +205,7 @@ const[ filteredTodo, setFilteredTodo ] = useState([]);
             rowsPerPageOptions={[5, 10, 20, 50, 100]}
             disableDensitySelector
             autoHeight
+            rowHeight={100}
             components={{
               Toolbar: GridToolbar,
             }}
@@ -263,6 +264,29 @@ const[ filteredTodo, setFilteredTodo ] = useState([]);
     </>
   );
 };
+
+const RenderCellExpand = (props) => {
+    return (
+      <Box
+        sx={{
+          width: 600,
+          maxHeight: 200, 
+          overflow: 'auto', 
+          textOverflow: "ellipsis",
+          whiteSpace: "pre-line", 
+          display: "block",
+          wordBreak: "break-word",
+          padding: 1,
+          '& .MuiTypography-root': {
+            fontSize: '0.8rem',
+            textAlign: 'justify', 
+          },
+        }}
+      >
+        <Typography>{props.value}</Typography>
+      </Box>
+    );
+  };
 
 export default TodoTable
 

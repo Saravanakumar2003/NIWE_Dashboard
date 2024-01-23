@@ -22,8 +22,8 @@ import Tab from "@mui/material/Tab";
 
 
 const EventTable = ({ currUser, myinfo, notify }) => {
-const[ eventList, seteventList ] = useState([]);
-const[ filteredEvent, setFilteredEvent ] = useState([]);
+  const [eventList, seteventList] = useState([]);
+  const [filteredEvent, setFilteredEvent] = useState([]);
   const [tabPage, setTabPage] = useState("1");
   const [editedEvent, setEditedEvent] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -54,9 +54,9 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
     });
 
     return () => {
-        unsubscribe();
-        }
-    }, []);
+      unsubscribe();
+    }
+  }, []);
 
 
   useEffect(() => {
@@ -64,28 +64,28 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
     const tempArr = eventList.reduce((result, data) => {
       switch (tabPage) {
         case "1":
-            break;
+          break;
         case "2":
-            if (data.type !== "Seminar") return result;
-            break;
+          if (data.type !== "Seminar") return result;
+          break;
         case "3":
-            if (data.type !== "Meeting") return result;
-            break;
+          if (data.type !== "Meeting") return result;
+          break;
         case "4":
-            if (data.type !== "Workshop") return result;
-            break;
+          if (data.type !== "Workshop") return result;
+          break;
         case "5":
-            if (data.type !== "Webinar") return result;
-            break;
+          if (data.type !== "Webinar") return result;
+          break;
         case "6":
-            if (data.type !== "Conference") return result;
-            break;
+          if (data.type !== "Conference") return result;
+          break;
         case "7":
-            if (data.type !== "Training") return result;
-            break;
+          if (data.type !== "Training") return result;
+          break;
         case "8":
-            if (data.type !== "Other") return result;
-            break;
+          if (data.type !== "Other") return result;
+          break;
         default:
           break;
       }
@@ -134,11 +134,11 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
   };
 
   const columns = [
-    { field: "id", headerName: "Sr No.", type: "number", width: 60 },
+    { field: "id", headerName: "Sr No.", type: "number", width: 60},
     { field: "name", headerName: "Event Name", width: 300 },
-    {field: "date", headerName: "Event Date", width: 150},
-    {field: "description", headerName: "Event Description", width: 500},
-    {field: "status", headerName: "Event Status", width: 200},
+    { field: "date", headerName: "Event Date", width: 150 },
+    { field: "description", headerName: "Event Description", width: 500, renderCell: (params) => <RenderCellExpand value={params.value} /> },
+    { field: "status", headerName: "Event Status", width: 200 },
     {
       field: "Delete",
       headerName: "Delete",
@@ -194,9 +194,9 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
           >
             Total Event: {filteredEvent.length}
           </Typography>
-          
 
-            <Grid item xs={12}>
+
+          <Grid item xs={12}>
             <Box sx={{ width: '100%', typography: 'body1' }}>
               <TabContext value={tabPage}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -225,6 +225,7 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
             rowsPerPageOptions={[5, 10, 20, 50, 100]}
             disableDensitySelector
             autoHeight
+            rowHeight={100}
             components={{
               Toolbar: GridToolbar,
             }}
@@ -242,7 +243,7 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
                   <TextField
                     key={field}
                     label={
-                        field.charAt(0).toUpperCase() + field.slice(1).toLowerCase()
+                      field.charAt(0).toUpperCase() + field.slice(1).toLowerCase()
                     }
                     value={editedEvent[field]}
                     onChange={(e) => handleFieldChange(field, e.target.value)}
@@ -281,6 +282,29 @@ const[ filteredEvent, setFilteredEvent ] = useState([]);
         </Grid>
       </Grid>
     </>
+  );
+};
+
+const RenderCellExpand = (props) => {
+  return (
+    <Box
+      sx={{
+        width: 600,
+        maxHeight: 200, 
+        overflow: 'auto', 
+        textOverflow: "ellipsis",
+        whiteSpace: "pre-line", 
+        display: "block",
+        wordBreak: "break-word",
+        padding: 1,
+        '& .MuiTypography-root': {
+          fontSize: '0.8rem',
+          textAlign: 'justify', 
+        },
+      }}
+    >
+      <Typography>{props.value}</Typography>
+    </Box>
   );
 };
 

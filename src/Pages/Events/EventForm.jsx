@@ -60,28 +60,9 @@ const EventForm = ({ currUser, myinfo, notify }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setError("")
-
-        if (eventInfo.name === "") {
-            setError("Event Name is required")
-            return
-        }
-        if (eventInfo.date === "") {
-            setError("Date is required")
-            return
-        }
-        if (eventInfo.description === "") {
-            setError("Description is required")
-            return
-        }
-        if (eventInfo.status === "") {
-            setError("Status is required")
-            return
-        }
-        if (eventInfo.type === "") {
-            setError("Type is required")
-            return
-        }
-
+        
+        setError("Date is required")
+      
         registerTodo()
     }
 

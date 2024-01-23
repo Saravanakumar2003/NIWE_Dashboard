@@ -88,10 +88,10 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
           if (data.ProjectType !== "WRA Consultancy Projects") return result;
           break;
         case "3":
-          if (data.ProjectType !== "WRA Consultancy Projects") return result;
+          if (data.ProjectType !== "Wind Monitoring Stations") return result;
           break;
         case "4":
-          if (data.ProjectType !== "WRA Consultancy Projects") return result;
+          if (data.ProjectType !== "WMS Consultancy Projects") return result;
           break;
         case "5":
           if (data.ProjectType !== "MNRE Projects WMS") return result;
@@ -257,7 +257,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Agreement",
       headerName: "Service Agreement Signed",
       flex: 1,
-      minWidth: 50,
+      minWidth: 120,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -313,7 +313,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "FeedbackRecived",
       headerName: "Feedback Recieved",
       flex: 1,
-      minWidth: 200,
+      minWidth: 250,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },
@@ -330,7 +330,7 @@ const MyProjects = ({ currUser, myinfo, notify }) => {
       field: "Remarks",
       headerName: "Remarks",
       flex: 1,
-      minWidth: 200,
+      minWidth: 250,
       renderCell: (params) => <RenderCellExpand value={params.value} />,
       sortable: false,
     },

@@ -59,26 +59,6 @@ const NewEmployeeForm = ({ currUser, myinfo, notify }) => {
         e.preventDefault()
         setError("")
 
-        if (employeeInfo.name === "") {
-            setError("name is required")
-            return
-        }
-
-        if (employeeInfo.phone === "") {
-            setError("phone is required")
-            return
-        }
-        
-        if (employeeInfo.email === "") {
-            setError("email is required")
-            return
-        }
-
-        if (employeeInfo.gender === "") {
-            setError("gender is required")
-            return
-        }
-
         registerEmployee()
     }
 
