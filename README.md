@@ -2,7 +2,7 @@
 
 # NIWE Dashboard
 
-NIWE Dashboard is a powerful project management system developed during Saravanakumar's internship at the National Institute of Wind Energy (NIWE) for his mentor, Dr. K Boopathi Sir. The system is designed to simplify and enhance project management, making it efficient for Dr. Boopathi Sir and his team at NIWE.
+NIWE Dashboard is a powerful project management system developed during Saravanakumar's internship at the National Institute of Wind Energy (NIWE) for his mentor, Dr. K Boopathi Sir. The system is designed to simplify and enhance project, employee, attendance, to-do, and event management, making it efficient for Dr. Boopathi Sir and his team at NIWE.
 
 ## Table of Contents
 
@@ -12,6 +12,7 @@ NIWE Dashboard is a powerful project management system developed during Saravana
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
+- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -72,6 +73,49 @@ npm start
 ## Deployment
 
 This project is deployed using Netlify. You can access the deployed version at [niwe.netlify.app](https://niwe.netlify.app).
+
+
+## Screenshots
+
+### Home
+
+![Home](https://i.postimg.cc/mkkFhQHv/Home.jpg) </br>
+Description: The "Home" screen is the landing page, offering a welcoming interface and providing an introduction to the NIWE Dashboard.
+
+### Add Project
+
+![Add Project](https://i.postimg.cc/kGHRSBNB/Add-Poject.jpg) </br>
+Description: The "Add Project" screen allows users to input and submit project details, making it easy to add new projects to the system.
+
+### Project Table
+
+![Project Table](https://i.postimg.cc/ncMvLtKX/Project-Table.jpg) </br>
+Description: The "Project Table" screen displays a table or grid of projects, offering a quick overview of ongoing projects, their statuses, and key details.
+
+### Employees
+
+![Employees](https://i.postimg.cc/nc5qjwT0/Employees.jpg) </br>
+*Description: The "Employees" screen showcases a list of team members, providing information about each employee and their respective roles.*
+
+### Attendance
+
+![Attendance](https://i.postimg.cc/4dJcRCNN/Attendance.jpg) </br>
+*Description: The "Attendance" screen provides an overview of employee attendance, allowing for easy tracking and management of attendance records.*
+
+### Todo
+
+![Todo](https://i.postimg.cc/QMZ5S927/Todo.jpg) </br>
+*Description: The "Todo" screen features a task management interface, allowing users to create, track, and manage their to-do lists within the system.*
+
+### Events
+
+![Events](https://i.postimg.cc/6pvndLmw/Events.jpg) </br>
+*Description: The "Events" screen showcases a calendar or list of events related to projects or team activities, helping users stay informed about upcoming events.*
+
+### Contact Us
+
+![Contact Us](https://i.postimg.cc/C1mqFvzC/Contact-Us.jpg) </br>
+*Description: The "Contact Us" screen offers a form or interface for users to get in touch with the developer or relevant contacts associated with the project.*
 
 ## Contributing
 
