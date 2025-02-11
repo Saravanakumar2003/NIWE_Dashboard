@@ -125,6 +125,14 @@ If you'd like to contribute to this project, feel free to open an issue or submi
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Disclaimer  
+
+This project is a **modified version** of [HNBGU Hostel Management Portal](https://github.com/VisheshGupta10/HNBGU-Hostel-Management-Portal) originally created by [VisheshGupta10](https://github.com/VisheshGupta10).  
+
+I have made modifications for **personal use and learning purposes**. **All rights to the original code and concept belong to the original author.**  
+
+🚨 **If you are the original creator and have any concerns, please contact me, and I will take the necessary actions, including removal if required.**  
+
 ## Contact
 
 For inquiries or support, you can reach out to Saravanakumar at:
